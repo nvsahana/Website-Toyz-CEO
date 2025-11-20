@@ -1,0 +1,404 @@
+@keyframes ribbonShimmer {
+  0%, 100% { opacity: 0.8; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.05); }
+}
+
+.celebration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.celebration-btn {
+  position: relative;
+  padding: 30px 60px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #ff1493, #c44dff);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: visible;
+  box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4),
+              inset 0 -5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  animation: btnPulse 2s ease-in-out infinite;
+}
+
+@keyframes btnPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4),
+                inset 0 -5px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6),
+                inset 0 -5px 20px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(255, 215, 0, 0.4);
+  }
+}
+
+.celebration-btn:hover:not(:disabled) {
+  transform: scale(1.1) translateY(-5px);
+  background-position: 100% 100%;
+  box-shadow: 0 25px 60px rgba(255, 20, 147, 0.6),
+              inset 0 -5px 20px rgba(0, 0, 0, 0.3),
+              0 0 40px rgba(255, 215, 0, 0.5);
+  animation: none;
+}
+
+.celebration-btn:active:not(:disabled) {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.celebration-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Ribbon Decorations */
+.ribbon {
+  position: absolute;
+  background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+  animation: ribbonShimmer 2s ease-in-out infinite;
+}
+
+.ribbon::before,
+.ribbon::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+}
+
+.ribbon-left,
+.ribbon-right {
+  width: 8px;
+  height: 120%;
+  top: -10%;
+}
+
+.ribbon-left {
+  left: 20%;
+  transform: rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.ribbon-right {
+  right: 20%;
+  transform: rotate(15deg);
+  animation-delay: 0.5s;
+}
+
+.ribbon-top,
+.ribbon-bottom {
+  height: 8px;
+  width: 120%;
+  left: -10%;
+}
+
+.ribbon-top {
+  top: 20%;
+  transform: rotate(-5deg);
+  animation-delay: 0.25s;
+}
+
+.ribbon-bottom {
+  bottom: 20%;
+  transform: rotate(5deg);
+  animation-delay: 0.75s;
+}
+
+/* Button Content */
+.btn-text {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gift-icon {
+  animation: giftBounce 1s ease-in-out infinite;
+}
+
+@keyframes giftBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-5deg); }
+  75% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.btn-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: btnShine 3s infinite;
+}
+
+@keyframes btnShine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Loading Animation */
+.celebration-btn.loading {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.8),
+                0 0 50px rgba(102, 126, 234, 0.6);
+  }
+}
+
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.loading-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.spinner-ring:nth-child(1) {
+  animation-delay: 0s;
+  border-top-color: #ffd700;
+}
+
+.spinner-ring:nth-child(2) {
+  animation-delay: 0.2s;
+  width: 70%;
+  height: 70%;
+  top: 15%;
+  left: 15%;
+  border-top-color: #ff6b6b;
+}
+
+.spinner-ring:nth-child(3) {
+  animation-delay: 0.4s;
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 30%;
+  border-top-color: #4d9fff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: textPulse 1s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Celebration Overlay */
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Confetti */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confettiFall linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotateZ(720deg);
+    opacity: 0;
+  }
+}
+
+/* Balloons */
+.balloons-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  animation: balloonFloat ease-in forwards;
+}
+
+@keyframes balloonFloat {
+  0% {
+    bottom: -150px;
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(30px) rotate(10deg);
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(-30px) rotate(-10deg);
+  }
+}
+
+/* Celebration Message */
+.celebration-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: messagePopIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  pointer-events: auto;
+}
+
+@keyframes messagePopIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.celebration-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8),
+               0 0 40px rgba(255, 20, 147, 0.6),
+               0 5px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  animation: titleBounce 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes titleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.celebration-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8),
+               0 3px 6px rgba(0, 0, 0, 0.5);
+  animation: subtitleFadeIn 0.8s ease-in-out 0.6s both;
+}
+
+@keyframes subtitleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .celebration-btn {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+  }
+  
+  .btn-text {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .gift-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+  }
+  
+  .celebration-title {
+    font-size: 2.5rem;
+  }
+  
+  .celebration-subtitle {
+    font-size: 1.3rem;
+  }
+}

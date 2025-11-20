@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+.birthday-container {
+  min-height: 100vh;
+  background: #0a0e27;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 20px 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.birthday-content {
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CEO Photo */
+.ceo-photo-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 40px;
+  animation: photoEntrance 1s ease-out;
+}
+
+@keyframes photoEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.photo-glow {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6), rgba(255, 107, 107, 0.4), transparent);
+  border-radius: 50%;
+  animation: photoGlowPulse 2s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+@keyframes photoGlowPulse {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.ceo-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffd700;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3),
+              0 0 30px rgba(255, 215, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  animation: photoFloat 3s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.photo-frame {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 3px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  animation: frameRotate 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes frameRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.superhero-badge {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.badge-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 300% 300%;
+  animation: glowRotate 3s linear infinite;
+  border-radius: 50px;
+  filter: blur(15px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+@keyframes glowRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.badge-text {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 3px solid #ffd700;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  letter-spacing: 3px;
+}
+
+.birthday-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.title-line {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.ceo-name {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 40px rgba(255, 215, 0, 0.3);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                 0 0 40px rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                 0 0 60px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.birthday-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  position: relative;
+  overflow: hidden;
+  animation: cardEntrance 1s ease-out 0.3s both;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotateX(20deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+.card-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.message-content {
+  position: relative;
+  z-index: 1;
+}
+
+.main-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #2d3748;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.team-commitment {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.commitment-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.commitment-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fff;
+  text-align: center;
+}
+
+.commitment-text strong {
+  color: #ffd700;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.success-wish {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.success-wish::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: slideShine 2s infinite;
+}
+
+@keyframes slideShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.wish-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.wish-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.signature {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.team-photos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.team-photo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffd700;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.team-photo:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.photo-name {
+  font-size: 0.9rem;
+  color: #ffd700;
+  font-weight: 600;
+  margin: 0;
+}
+
+.signature p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.team-names {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 15px 0 !important;
+}
+
+.team-motto {
+  font-style: italic;
+  color: #667eea !important;
+  font-weight: 600;
+}
+
+/* Gift Button */
+.gift-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 50px;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: 3px solid #ffd700;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4),
+              0 0 20px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: buttonShine 3s linear infinite;
+}
+
+@keyframes buttonShine {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gift-button:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6),
+              0 0 40px rgba(255, 215, 0, 0.6);
+  border-color: #fff;
+}
+
+.gift-button:active {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.gift-svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: giftWiggle 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes giftWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-5deg) scale(1.05); }
+  50% { transform: rotate(0deg) scale(1); }
+  75% { transform: rotate(5deg) scale(1.05); }
+}
+
+.gift-button-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  animation: floatAround 20s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+}
+
+.icon svg {
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.icon-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.icon-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.icon-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 4s;
+}
+
+.icon-4 {
+  bottom: 30%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.icon-5 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 3s;
+}
+
+.icon-6 {
+  top: 60%;
+  right: 5%;
+  animation-delay: 5s;
+}
+
+@keyframes floatAround {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-20px, 20px) rotate(180deg);
+  }
+  75% {
+    transform: translate(20px, 20px) rotate(270deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .title-line {
+    font-size: 2.5rem;
+  }
+  
+  .ceo-name {
+    font-size: 1.8rem;
+  }
+  
+  .ceo-photo-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .birthday-card {
+    padding: 30px 20px;
+  }
+  
+  .main-message {
+    font-size: 1.1rem;
+  }
+  
+  .commitment-title {
+    font-size: 1.5rem;
+  }
+  
+  .commitment-text, .wish-text {
+    font-size: 1rem;
+  }
+  
+  .icon svg {
+    width: 40px;
+    height: 40px;
+  }
+}
