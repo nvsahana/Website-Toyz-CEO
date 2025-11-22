@@ -398,17 +398,17 @@ const ToyzVision = ({ showHeroAnimation }) => {
           <div className="team-members">
             <div className="team-member">
               <div className="member-avatar">
-                <img src={sahanaImg} alt="Sahana" className="member-photo" />
-              </div>
-              <h3>Sahana</h3>
-              <p className="member-role">Core Developer</p>
-            </div>
-            <div className="team-member">
-              <div className="member-avatar">
                 <img src={woleImg} alt="Wole Idowu" className="member-photo" />
               </div>
               <h3>Wole Idowu</h3>
               <p className="member-role">CTO • Tech Architect</p>
+            </div>
+            <div className="team-member">
+              <div className="member-avatar">
+                <img src={sahanaImg} alt="Sahana" className="member-photo" />
+              </div>
+              <h3>Sahana</h3>
+              <p className="member-role">Core Developer</p>
             </div>
             <div className="team-member">
               <div className="member-avatar">

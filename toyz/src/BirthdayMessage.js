@@ -49,7 +49,7 @@ const BirthdayMessage = ({ onNavigateToVision }) => {
             <div className="team-commitment">
               <h3 className="commitment-title">Our Promise to You</h3>
               <p className="commitment-text">
-                With <strong>Sahana</strong> (ME!), <strong>Wole Idowu</strong> (CTO), 
+                With <strong>Wole Idowu</strong> (CTO), <strong>Sahana</strong>, 
                 and <strong>Taylor Weddington</strong> (Product Manager) by your side, 
                 we are committed to making this vision a reality.
               </p>
@@ -95,12 +95,12 @@ const BirthdayMessage = ({ onNavigateToVision }) => {
             <div className="signature">
               <div className="team-photos">
                 <div className="team-photo-item">
-                  <img src={sahanaImg} alt="Sahana" className="team-photo" />
-                  <p className="photo-name">Sahana</p>
-                </div>
-                <div className="team-photo-item">
                   <img src={woleImg} alt="Wole" className="team-photo" />
                   <p className="photo-name">Wole</p>
+                </div>
+                <div className="team-photo-item">
+                  <img src={sahanaImg} alt="Sahana" className="team-photo" />
+                  <p className="photo-name">Sahana</p>
                 </div>
                 <div className="team-photo-item">
                   <img src={taylorImg} alt="Taylor" className="team-photo" />
@@ -108,8 +108,8 @@ const BirthdayMessage = ({ onNavigateToVision }) => {
                 </div>
               </div>
               <p>With love and dedication,</p>
-              <p className="team-names">Sahana</p>
-              <p className="team-motto">Together with Wole & Taylor - The Toyz Electronics Dream Team</p>
+              <p className="team-names">Wole Idowu</p>
+              <p className="team-motto">Together with Sahana & Taylor - The Toyz Electronics Dream Team</p>
             </div>
           </div>
         </div>
