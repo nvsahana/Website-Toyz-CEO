@@ -4,17 +4,8 @@ import sahanaImg from './assets/sahana.jpeg';
 import woleImg from './assets/wole.jpeg';
 import taylorImg from './assets/taylor.jpeg';
 
-const ToyzVision = ({ showHeroAnimation }) => {
+const ToyzVision = () => {
   const [activeSection, setActiveSection] = useState(0);
-  const [heroFlying, setHeroFlying] = useState(showHeroAnimation);
-
-  useEffect(() => {
-    if (showHeroAnimation) {
-      setHeroFlying(true);
-      const timer = setTimeout(() => setHeroFlying(false), 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [showHeroAnimation]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,35 +29,6 @@ const ToyzVision = ({ showHeroAnimation }) => {
     <div className="vision-container">
       <div className="cosmic-bg"></div>
       <div className="particles"></div>
-      
-      {heroFlying && (
-        <div className="flying-superhero">
-          <svg viewBox="0 0 100 120" width="80" height="96">
-            {/* Cape */}
-            <path d="M 35 35 Q 20 50, 25 80 L 35 75 Z" fill="#ff1493" opacity="0.8"/>
-            <path d="M 65 35 Q 80 50, 75 80 L 65 75 Z" fill="#ff1493" opacity="0.8"/>
-            {/* Body */}
-            <ellipse cx="50" cy="55" rx="18" ry="25" fill="#667eea"/>
-            {/* Head */}
-            <circle cx="50" cy="30" r="12" fill="#ffd700"/>
-            {/* Mask */}
-            <ellipse cx="50" cy="28" rx="14" ry="6" fill="#000"/>
-            {/* Arms extended forward */}
-            <ellipse cx="35" cy="50" rx="8" ry="4" fill="#ffd700" transform="rotate(-30 35 50)"/>
-            <ellipse cx="65" cy="50" rx="8" ry="4" fill="#ffd700" transform="rotate(30 65 50)"/>
-            {/* Legs */}
-            <rect x="42" y="75" width="6" height="20" fill="#667eea"/>
-            <rect x="52" y="75" width="6" height="20" fill="#667eea"/>
-            <ellipse cx="45" cy="95" rx="4" ry="3" fill="#ff6b6b"/>
-            <ellipse cx="55" cy="95" rx="4" ry="3" fill="#ff6b6b"/>
-            {/* Belt */}
-            <rect x="35" y="65" width="30" height="4" fill="#ffd700"/>
-            {/* Logo */}
-            <circle cx="50" cy="50" r="6" fill="#ffd700"/>
-            <text x="50" y="54" fontSize="8" fill="#667eea" textAnchor="middle" fontWeight="bold">T</text>
-          </svg>
-        </div>
-      )}
       
       {/* Hero Section */}
       <section className="hero-section">
