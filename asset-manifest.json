@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Website-Toyz-CEO/static/css/main.4f9077f0.css",
-    "main.js": "/Website-Toyz-CEO/static/js/main.5c901c6e.js",
+    "main.js": "/Website-Toyz-CEO/static/js/main.4c7a4825.js",
     "static/js/453.46cdc5d8.chunk.js": "/Website-Toyz-CEO/static/js/453.46cdc5d8.chunk.js",
     "static/media/damola.jpeg": "/Website-Toyz-CEO/static/media/damola.3ae0da7b77001e92662c.jpeg",
     "static/media/wole.jpeg": "/Website-Toyz-CEO/static/media/wole.e3dd9de74fb3c825c25d.jpeg",
@@ -9,11 +9,11 @@
     "static/media/taylor.jpeg": "/Website-Toyz-CEO/static/media/taylor.49c52bb13f216e312184.jpeg",
     "index.html": "/Website-Toyz-CEO/index.html",
     "main.4f9077f0.css.map": "/Website-Toyz-CEO/static/css/main.4f9077f0.css.map",
-    "main.5c901c6e.js.map": "/Website-Toyz-CEO/static/js/main.5c901c6e.js.map",
+    "main.4c7a4825.js.map": "/Website-Toyz-CEO/static/js/main.4c7a4825.js.map",
     "453.46cdc5d8.chunk.js.map": "/Website-Toyz-CEO/static/js/453.46cdc5d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4f9077f0.css",
-    "static/js/main.5c901c6e.js"
+    "static/js/main.4c7a4825.js"
   ]
 }
